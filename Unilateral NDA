@@ -1,0 +1,34 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Unilateral NDA",
+    "description": "Template for Unilateral Non-Disclosure Agreement with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "Medium",
+    "tags": ["nda", "confidentiality", "agreement", "template"],
+    "questions": [
+      { "text": "Version number and date?", "id": "nda_version" },
+      { "text": "Effective Date?", "id": "effective_date" },
+      { "text": "Purpose of disclosure?", "id": "purpose" },
+      { "text": "Agreement Term (months)?", "id": "agreement_term" },
+      { "text": "Confidentiality Term (months)?", "id": "confidentiality_term" },
+      { "text": "Governing Law jurisdiction?", "id": "governing_law" },
+      { "text": "Dispute Resolution method?", "id": "dispute_resolution" },
+      { "text": "Disclosing Party Company Name?", "id": "disclosing_company" },
+      { "text": "Disclosing Party Representative Name?", "id": "disclosing_name" },
+      { "text": "Disclosing Party Title?", "id": "disclosing_title" },
+      { "text": "Disclosing Party Email?", "id": "disclosing_email" },
+      { "text": "Disclosing Party Address?", "id": "disclosing_address" },
+      { "text": "Receiving Party Name?", "id": "receiving_name" },
+      { "text": "Receiving Party Email?", "id": "receiving_email" },
+      { "text": "Receiving Party Address?", "id": "receiving_address" },
+      { "text": "Disclosing Party Signature Date?", "id": "disclosing_signature_date" },
+      { "text": "Receiving Party Signature Date?", "id": "receiving_signature_date" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    This template is only a starting point and not legal advice. Tailor to your needs and consult counsel.\n  </div>\n\n  <h1 style=\"text-align:center;\">UNILATERAL NON-DISCLOSURE AGREEMENT</h1>\n  <p>Version {{nda_version}}</p>\n  <p>This NDA is entered into by the parties below as of {{effective_date}} (the “Effective Date”).</p>\n\n  <h3>Key Terms</h3>\n  <p><strong>Purpose:</strong> {{purpose}}</p>\n  <p><strong>Agreement Term:</strong> {{agreement_term}} months</p>\n  <p><strong>Confidentiality Term:</strong> {{confidentiality_term}} months</p>\n  <p><strong>Governing Law:</strong> {{governing_law}}</p>\n  <p><strong>Dispute Resolution:</strong> {{dispute_resolution}}</p>\n\n  <h3>Signatures</h3>\n  <table style=\"width:100%; margin-top:20px;\">\n    <tr>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>DISCLOSING PARTY</h4>\n        <p>Company: {{disclosing_company}}</p>\n        <p>Name: {{disclosing_name}}</p>\n        <p>Title: {{disclosing_title}}</p>\n        <p>Email: {{disclosing_email}}</p>\n        <p>Address: {{disclosing_address}}</p>\n        <p>Signature Date: {{disclosing_signature_date}}</p>\n      </td>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>RECEIVING PARTY</h4>\n        <p>Name: {{receiving_name}}</p>\n        <p>Email: {{receiving_email}}</p>\n        <p>Address: {{receiving_address}}</p>\n        <p>Signature Date: {{receiving_signature_date}}</p>\n      </td>\n    </tr>\n  </table>\n\n  <h3>Subject of NDA</h3>\n  <p>Confidential Information includes any non-public business, technical, or strategic information exchanged during the Agreement Term that would reasonably be understood to be confidential. No rights or licenses are granted except as stated.</p>\n\n  <h3>Use of Confidential Information</h3>\n  <p>Receiving Party must use Confidential Information only for the Purpose, not disclose without consent, and protect it with at least reasonable care. Any loss or improper disclosure must be promptly reported.</p>\n\n  <h3>Exceptions</h3>\n  <p>Information already public, known lawfully beforehand, obtained from a lawful third party, or independently developed is excluded.</p>\n\n  <h3>Required Disclosures</h3>\n  <p>Permitted if legally required, with notice to Disclosing Party where possible, and efforts to protect confidentiality.</p>\n\n  <h3>Term of NDA</h3>\n  <p>In effect for {{agreement_term}} months. Confidentiality obligations survive for {{confidentiality_term}} months. On termination, Confidential Information must be returned or destroyed, except as required by law.</p>\n\n  <h3>Remedies</h3>\n  <p>Disclosing Party may seek equitable relief (injunctions, damages) for breaches.</p>\n\n  <h3>Disclaimer</h3>\n  <p>Confidential Information is provided “as is,” without warranty.</p>\n\n  <h3>Governing Law & Dispute Resolution</h3>\n  <p>This NDA is governed by {{governing_law}} law. Disputes resolved by {{dispute_resolution}}.</p>\n\n  <h3>Other Legal Terms</h3>\n  <p>No assignment without consent. Successors/assigns bound. Waivers must be in writing. Severability applies. Entire agreement between the Parties. May be executed in counterparts, including electronically.</p>\n</div>"
+      }
+    ]
+  }'
