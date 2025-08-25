@@ -3,7 +3,7 @@ curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates"
   -d '{
     "name": "Certificate of Incumbency",
     "description": "Template for Certificate of Incumbency with placeholders and structured questions.",
-    "category": "Corporate Governance",
+    "category": "for-startups",
     "complexity": "Medium",
     "tags": ["certificate", "incumbency", "corporate", "template"],
     "questions": [
