@@ -1,0 +1,32 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Terms of Use",
+    "description": "Template for Terms of Use with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "High",
+    "tags": ["terms of use", "tos", "legal", "template"],
+    "questions": [
+      { "text": "Company Legal Name?", "id": "company_name" },
+      { "text": "Company Website/Domain?", "id": "company_website" },
+      { "text": "Company Contact Email?", "id": "company_contact_email" },
+      { "text": "Last Updated Date?", "id": "last_updated" },
+      { "text": "Minimum Age Requirement?", "id": "minimum_age" },
+      { "text": "Do users need an account? (Yes/No)", "id": "account_required" },
+      { "text": "Are there Paid Plans/Subscriptions? (Yes/No)", "id": "paid_plans" },
+      { "text": "Subscription Billing Interval (monthly, yearly, etc.)?", "id": "billing_interval" },
+      { "text": "Refund Policy?", "id": "refund_policy" },
+      { "text": "Copyright Complaint Email?", "id": "copyright_email" },
+      { "text": "Governing Law jurisdiction?", "id": "governing_law" },
+      { "text": "Dispute Resolution method?", "id": "dispute_resolution" },
+      { "text": "Arbitration Institution?", "id": "arbitration_institution" },
+      { "text": "Dispute Resolution Location?", "id": "arbitration_location" },
+      { "text": "Contact Email for Questions?", "id": "tos_contact_email" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Publishing)</strong><br/>\n    This document is a starting point only and not legal advice. Tailor to your needs and consult counsel.\n  </div>\n\n  <p style=\"text-align:right; font-size:12px;\">Last Updated: {{last_updated}}</p>\n  <h1 style=\"text-align:center;\">TERMS OF USE</h1>\n\n  <h3>Introduction</h3>\n  <p>{{company_name}} (\"Company\" or \"we\") welcomes you to use our website {{company_website}} (\"Service\"). These Terms govern your access to and use of the Service. By using the Service, you agree to these Terms and our Privacy Policy. If you do not agree, do not use the Service.</p>\n\n  <h3>Changes to the Terms</h3>\n  <p>We may update these Terms from time to time. Continued use after updates constitutes acceptance.</p>\n\n  <h3>Your Use of the Service</h3>\n  <ul>\n    <li><strong>Eligibility:</strong> You must be at least {{minimum_age}} years old.</li>\n    <li><strong>Account:</strong> Account required: {{account_required}}. You are responsible for your credentials.</li>\n    <li><strong>License:</strong> Limited, non-exclusive license for personal, non-commercial use only.</li>\n  </ul>\n\n  <h3>User Content</h3>\n  <p>You retain ownership of your content. You grant Company a license to use it for service operation and promotion.</p>\n\n  <h3>Prohibited Activities</h3>\n  <p>Examples: reverse engineering, malware distribution, impersonation, unlawful use, harmful or infringing content.</p>\n\n  <h3>Fees and Payment</h3>\n  <p>Paid Plans: {{paid_plans}}. Billing interval: {{billing_interval}}. Refund Policy: {{refund_policy}}.</p>\n\n  <h3>Intellectual Property</h3>\n  <p>All rights in the Service remain the exclusive property of Company.</p>\n\n  <h3>Copyright Complaint</h3>\n  <p>Send copyright complaints to: {{copyright_email}} (with “Copyright” in the subject line).</p>\n\n  <h3>Updates to the Service</h3>\n  <p>We may issue updates, upgrades, and suspend or discontinue the Service at any time.</p>\n\n  <h3>Privacy</h3>\n  <p>Use of the Service is also governed by our Privacy Policy. Do not misuse or disclose others’ personal data.</p>\n\n  <h3>General Terms</h3>\n  <p><strong>Links:</strong> We are not responsible for third-party sites. <br/>\n  <strong>Limitation of Liability:</strong> Service is provided “as is” without warranties. <br/>\n  <strong>Indemnity:</strong> You agree to indemnify Company for claims arising from your use of the Service.</p>\n\n  <h3>Governing Law and Disputes</h3>\n  <p>Governing law: {{governing_law}}. Disputes resolved via {{dispute_resolution}} at {{arbitration_location}} with {{arbitration_institution}}.</p>\n\n  <h3>Term and Termination</h3>\n  <p>You may stop using the Service at any time. We may terminate your access for violations or legal requirements.</p>\n\n  <h3>Contact</h3>\n  <p>Questions? Contact us at {{tos_contact_email}}.</p>\n</div>"
+      }
+    ]
+  }'
