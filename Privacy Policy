@@ -1,0 +1,30 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Privacy Policy",
+    "description": "Template for Privacy Policy with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "Medium",
+    "tags": ["privacy", "policy", "legal", "template"],
+    "questions": [
+      { "text": "Company Legal Name?", "id": "company_name" },
+      { "text": "Company Website/Domain?", "id": "company_website" },
+      { "text": "Company Email Contact for Privacy Inquiries?", "id": "company_contact_email" },
+      { "text": "Last Updated Date?", "id": "last_updated" },
+      { "text": "Age Restriction (minimum age)?", "id": "minimum_age" },
+      { "text": "Children’s Privacy Age Cutoff?", "id": "child_age_cutoff" },
+      { "text": "Data Retention/Deletion Contact Email?", "id": "data_request_email" },
+      { "text": "Does the company use cookies/tracking technologies? (Yes/No)", "id": "cookies_use" },
+      { "text": "What categories of data are collected? (profile, usage, device, etc.)", "id": "data_categories" },
+      { "text": "List purposes for which personal data is used", "id": "data_use_purposes" },
+      { "text": "Types of third parties personal data is shared with?", "id": "third_parties" },
+      { "text": "Security Measures in place?", "id": "security_measures" },
+      { "text": "Governing Law jurisdiction?", "id": "governing_law" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Publishing)</strong><br/>\n    This document is a starting point only and not legal advice. Tailor to your needs and consult counsel.\n  </div>\n\n  <p style=\"text-align:right; font-size:12px;\">Last Updated: {{last_updated}}</p>\n  <h1 style=\"text-align:center;\">PRIVACY POLICY</h1>\n\n  <h3>Introduction</h3>\n  <p>This Privacy Policy explains how {{company_name}} (\"Company\" or \"we\") collects, uses, shares, and otherwise processes your personal data and your rights regarding it. We provide the website {{company_website}} (\"Service\"). By using the Service, you agree to this Privacy Policy.</p>\n\n  <h3>Information We Collect</h3>\n  <p>We may collect the following categories of personal data: {{data_categories}}.</p>\n  <ul>\n    <li>Information you provide directly (profile details, communications).</li>\n    <li>Information from third parties (social media, databases).</li>\n    <li>Information collected automatically (device, browser, cookies = {{cookies_use}}).</li>\n  </ul>\n\n  <h3>Purposes for Using Personal Data</h3>\n  <p>We use personal data for: {{data_use_purposes}}.</p>\n\n  <h3>Disclosure of Personal Data</h3>\n  <p>We may share data with: {{third_parties}}, or as required by law, in business transfers, or with service providers. We may also disclose anonymous or aggregated data.</p>\n\n  <h3>Your Rights</h3>\n  <p>You have rights to access, correct, delete, or update your data. Contact us at {{data_request_email}}. You may also opt-out of marketing communications.</p>\n\n  <h3>Data Security</h3>\n  <p>We maintain technical, administrative, and physical safeguards ({{security_measures}}) to protect your personal data. However, internet security cannot be guaranteed.</p>\n\n  <h3>Children’s Privacy</h3>\n  <p>You must be at least {{minimum_age}} years old to use the Service. We do not knowingly collect data from children under {{child_age_cutoff}}.</p>\n\n  <h3>Changes</h3>\n  <p>This Privacy Policy may be updated periodically. Continued use after updates constitutes acceptance.</p>\n\n  <h3>Questions?</h3>\n  <p>If you have any questions, contact us at {{company_contact_email}}.</p>\n\n  <h3>Governing Law</h3>\n  <p>This Privacy Policy is governed by the laws of {{governing_law}}.</p>\n</div>"
+      }
+    ]
+  }'
