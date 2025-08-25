@@ -1,0 +1,43 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Annual Meeting of Shareholders – Minutes",
+    "description": "Redacted, form-driven template for Annual Meeting of Shareholders minutes with placeholders and questions.",
+    "category": "for-startups",
+    "complexity": "Medium",
+    "tags": ["minutes", "shareholders", "corporate", "template"],
+    "questions": [
+      { "text": "What is Company legal name?", "id": "company_name" },
+      { "text": "Meeting type (Annual/Special)?", "id": "meeting_type" },
+      { "text": "Meeting date (YYYY-MM-DD)?", "id": "meeting_date" },
+      { "text": "Meeting time (HH:MM)?", "id": "meeting_time" },
+      { "text": "Meeting street address?", "id": "address_line" },
+      { "text": "City?", "id": "city" },
+      { "text": "State/Province?", "id": "state" },
+      { "text": "Postal code?", "id": "zip" },
+      { "text": "Country?", "id": "country" },
+      { "text": "Chair full name?", "id": "chair_name" },
+      { "text": "Chair title?", "id": "chair_title" },
+      { "text": "Secretary full name?", "id": "secretary_name" },
+      { "text": "Secretary title?", "id": "secretary_title" },
+      { "text": "Was notice given per bylaws? (Yes/No)", "id": "notice_given" },
+      { "text": "If yes, how/when was notice given?", "id": "notice_details" },
+      { "text": "Total shares outstanding on record date?", "id": "shares_outstanding" },
+      { "text": "Shares represented in person?", "id": "shares_in_person" },
+      { "text": "Shares represented by proxy?", "id": "shares_by_proxy" },
+      { "text": "Quorum present? (Yes/No)", "id": "quorum_present" },
+      { "text": "List shareholders present in person (comma-separated)", "id": "shareholders_present" },
+      { "text": "Prior meeting date for minutes approval?", "id": "prior_meeting_date" },
+      { "text": "List directors elected (comma-separated)", "id": "directors_elected" },
+      { "text": "List officers elected as name:title (comma-separated)", "id": "officers_elected" },
+      { "text": "Adjournment time (HH:MM)?", "id": "adjournment_time" },
+      { "text": "Signature block date?", "id": "signature_date" },
+      { "text": "Secretary printed name for signature?", "id": "signature_name" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    Disclaimer. This document is a starting point only and not legal, financial, tax, or investment advice. Tailor to your needs and consult counsel. Use is subject to Terms of Use.\n  </div>\n\n  <h1 style=\"text-align:center; margin-bottom:0;\">{{company_name}}</h1>\n  <h2 style=\"text-align:center; margin-top:4px;\">{{meeting_type}} Meeting of Shareholders</h2>\n  <p style=\"text-align:center;\">\n    Date: {{meeting_date}} &nbsp; | &nbsp; Time: {{meeting_time}}<br/>\n    Location: {{address_line}}, {{city}}, {{state}} {{zip}}, {{country}}\n  </p>\n\n  <h3>Minutes</h3>\n\n  <h4>Chair and Secretary</h4>\n  <p>{{chair_name}}, {{chair_title}}, acted as Chair and presided over the meeting, and {{secretary_name}}, {{secretary_title}}, acted as the Secretary.</p>\n\n  <h4>Notice</h4>\n  <p>Notice given per bylaws: <strong>{{notice_given}}</strong>.<br/>\n  Details (if applicable): {{notice_details}}</p>\n\n  <h4>Attendance and Quorum</h4>\n  <p>The Secretary reported the following shareholders present in person: {{shareholders_present}}.</p>\n  <p>Of the {{shares_outstanding}} shares outstanding and entitled to vote on the record date, {{shares_in_person}} were represented in person and {{shares_by_proxy}} by proxy. Quorum present: <strong>{{quorum_present}}</strong>. The Chair called the meeting to order.</p>\n\n  <h4>Approval of Prior Minutes</h4>\n  <p>The Secretary distributed the minutes of the previous meeting held on {{prior_meeting_date}}. Upon motion duly made and seconded, it was unanimously <strong>RESOLVED</strong> that the minutes of the prior meeting are adopted and approved.</p>\n\n  <h4>Nomination and Election of Directors and Officers</h4>\n  <ol>\n    <li><strong>Election of Directors:</strong> The shareholders <strong>ELECTED</strong> the following individuals to the Board of Directors: {{directors_elected}}.</li>\n    <li><strong>Election of Officers:</strong> The Directors <strong>ELECTED</strong> the following individuals as Officers of the Corporation: {{officers_elected}}.</li>\n  </ol>\n\n  <h4>Adjournment</h4>\n  <p>There being no further business, the Chair ordered the meeting adjourned at {{adjournment_time}}.</p>\n\n  <p style=\"margin-top:32px;\">Dated: ____________________ ({{signature_date}})</p>\n  <p style=\"margin-top:24px;\">\n    _____________________________<br/>\n    {{signature_name}}<br/>\n    Secretary\n  </p>\n</div>"
+      }
+    ]
+  }'
