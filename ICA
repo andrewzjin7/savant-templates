@@ -1,0 +1,33 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Independent Contractor Agreement",
+    "description": "Template for Independent Contractor Agreement with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "High",
+    "tags": ["contract", "independent contractor", "agreement", "template"],
+    "questions": [
+      { "text": "What is the Agreement version?", "id": "agreement_version" },
+      { "text": "What is the Agreement date (Effective Date)?", "id": "agreement_date" },
+      { "text": "Describe the Services to be provided", "id": "services" },
+      { "text": "What is the Service Fee description?", "id": "service_fee" },
+      { "text": "What is the Monthly Fee amount?", "id": "monthly_fee" },
+      { "text": "What are the Payment Terms?", "id": "payment_terms" },
+      { "text": "What is the Agreement Term (duration)?", "id": "agreement_term" },
+      { "text": "What is the Governing Law?", "id": "governing_law" },
+      { "text": "What is the Dispute Resolution method?", "id": "dispute_resolution" },
+      { "text": "Client Company Name?", "id": "client_company" },
+      { "text": "Client Representative Name?", "id": "client_name" },
+      { "text": "Client Representative Title?", "id": "client_title" },
+      { "text": "Client Email?", "id": "client_email" },
+      { "text": "Client Address?", "id": "client_address" },
+      { "text": "Contractor Name?", "id": "contractor_name" },
+      { "text": "Contractor Email?", "id": "contractor_email" },
+      { "text": "Contractor Address?", "id": "contractor_address" },
+      { "text": "Client Signature Date?", "id": "client_signature_date" },
+      { "text": "Contractor Signature Date?", "id": "contractor_signature_date" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    This template should not be construed as legal advice. It is only a starting point. Tailor to your needs and consult an attorney. Use is subject to Terms of Use.\n  </div>\n\n  <h1 style=\"text-align:center;\">INDEPENDENT CONTRACTOR AGREEMENT</h1>\n  <p style=\"text-align:center;\">Version {{agreement_version}} ({{agreement_date}})</p>\n\n  <p>This Independent Contractor Agreement (\"Agreement\") is entered into by the parties listed below as of the Effective Date. Each party confirms the form has only been completed, not modified.</p>\n\n  <h3>Key Terms</h3>\n  <p><strong>Services:</strong> {{services}}</p>\n  <p><strong>Service Fee:</strong> {{service_fee}}</p>\n  <p><strong>Monthly Fee:</strong> {{monthly_fee}}</p>\n  <p><strong>Payment Terms:</strong> {{payment_terms}}</p>\n  <p><strong>Agreement Term:</strong> {{agreement_term}}</p>\n  <p><strong>Governing Law:</strong> {{governing_law}}</p>\n  <p><strong>Dispute Resolution:</strong> {{dispute_resolution}}</p>\n\n  <h3>Signatures</h3>\n  <table style=\"width:100%; margin-top:20px;\">\n    <tr>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>CLIENT</h4>\n        <p>Company: {{client_company}}</p>\n        <p>Name: {{client_name}}</p>\n        <p>Title: {{client_title}}</p>\n        <p>Email: {{client_email}}</p>\n        <p>Address: {{client_address}}</p>\n        <p>Signature Date: {{client_signature_date}}</p>\n      </td>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>CONTRACTOR</h4>\n        <p>Name: {{contractor_name}}</p>\n        <p>Email: {{contractor_email}}</p>\n        <p>Address: {{contractor_address}}</p>\n        <p>Signature Date: {{contractor_signature_date}}</p>\n      </td>\n    </tr>\n  </table>\n\n  <h3>Scope of Engagement</h3>\n  <p>Contractor will perform the Services during the Agreement Term. Client may modify scope by written agreement. Contractor controls manner and means of performance. Status updates provided upon request.</p>\n\n  <h3>Compensation</h3>\n  <p>Client will pay Contractor the Service Fee according to Payment Terms. Expenses must be pre-approved and documented. Payment requires Contractor invoices. Contractor is responsible for taxes.</p>\n\n  <h3>Intellectual Property</h3>\n  <p>Contractor assigns all rights to Work Product to Client. Contractor retains no rights. Any Preexisting IP requires licensing to Client. Contractor will sign necessary confirmatory documents.</p>\n\n  <h3>Representations and Warranties</h3>\n  <p>Contractor warrants Services will be professional, Work Product original, non-infringing,_
