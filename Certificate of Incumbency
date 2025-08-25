@@ -1,0 +1,29 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Certificate of Incumbency – Redacted Template",
+    "description": "Template for Certificate of Incumbency with placeholders and structured questions.",
+    "category": "Corporate Governance",
+    "complexity": "Medium",
+    "tags": ["certificate", "incumbency", "corporate", "template"],
+    "questions": [
+      { "text": "What is the Company legal name?", "id": "company_name" },
+      { "text": "What is the Company jurisdiction (state/country)?", "id": "company_jurisdiction" },
+      { "text": "What is the Company registered address?", "id": "company_address" },
+      { "text": "What is the Company File Number?", "id": "company_file_number" },
+      { "text": "What is the date of Certificate of Incorporation filing?", "id": "incorporation_date" },
+      { "text": "What is the certificate issuance date?", "id": "certificate_date" },
+      { "text": "Secretary full name?", "id": "secretary_name" },
+      { "text": "List Directors (comma-separated)", "id": "directors" },
+      { "text": "List Shareholders (comma-separated)", "id": "shareholders" },
+      { "text": "List Officers as title:name (comma-separated)", "id": "officers" },
+      { "text": "Acknowledgment date?", "id": "acknowledgment_date" },
+      { "text": "Signature block name for Secretary?", "id": "signature_name" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    Disclaimer. This document is a starting point only and not legal, financial, tax, or investment advice. Tailor to your needs and consult counsel. Use is subject to Terms of Use.\n  </div>\n\n  <h1 style=\"text-align:center;\">CERTIFICATE OF INCUMBENCY</h1>\n  <h3 style=\"text-align:center;\">FOR {{company_name}}</h3>\n  <p style=\"text-align:center;\">Date: {{certificate_date}}</p>\n\n  <p>I, {{secretary_name}}, being the Secretary of {{company_name}}, a {{company_jurisdiction}} corporation with its registered address at {{company_address}} (the “Company”), do hereby certify as follows:</p>\n\n  <p>That I am the duly elected, qualified, and incumbent Secretary of {{company_name}}, File Number {{company_file_number}}. The Certificate of Incorporation of Company was filed with the Secretary of State for the State of {{company_jurisdiction}} on {{incorporation_date}}.</p>\n\n  <p>That I have the power and authority to execute this certificate on behalf of the Company.</p>\n\n  <p>That, from my examination of the minute book and other pertinent records of the Company in my possession, and of my own knowledge, the following individuals were designated and appointed to the offices listed below and hold these offices at the time of signing:</p>\n\n  <p><strong>Officers:</strong> {{officers}}</p>\n\n  <p><strong>Directors:</strong> {{directors}}</p>\n\n  <p><strong>Shareholders:</strong> {{shareholders}}</p>\n\n  <p>This instrument was acknowledged by {{secretary_name}} as the Secretary of {{company_name}} this {{acknowledgment_date}}.</p>\n\n  <p style=\"margin-top:32px;\">\n    _____________________________<br/>\n    {{signature_name}}<br/>\n    Secretary of {{company_name}}\n  </p>\n</div>"
+      }
+    ]
+  }'
