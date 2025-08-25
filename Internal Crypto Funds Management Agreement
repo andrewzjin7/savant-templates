@@ -1,0 +1,40 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Internal Crypto Funds Management Agreement",
+    "description": "Template for Internal Crypto Funds Management Agreement with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "High",
+    "tags": ["crypto", "funds", "management", "agreement", "template"],
+    "questions": [
+      { "text": "Principal Entity Name?", "id": "principal_entity" },
+      { "text": "Principal Jurisdiction of Incorporation?", "id": "principal_jurisdiction" },
+      { "text": "Principal Registration Number?", "id": "principal_registration" },
+      { "text": "Principal Registered Address?", "id": "principal_address" },
+      { "text": "Principal Representative Name?", "id": "principal_name" },
+      { "text": "Principal Representative Title?", "id": "principal_title" },
+      { "text": "Principal Email?", "id": "principal_email" },
+      { "text": "Agent Full Name?", "id": "agent_name" },
+      { "text": "Agent Nationality?", "id": "agent_nationality" },
+      { "text": "Agent Passport/ID Number?", "id": "agent_passport" },
+      { "text": "Agent Address?", "id": "agent_address" },
+      { "text": "Agent Email?", "id": "agent_email" },
+      { "text": "Effective Date of Agreement?", "id": "effective_date" },
+      { "text": "Duration of Agreement?", "id": "agreement_term" },
+      { "text": "Termination Notice Period by Principal?", "id": "termination_principal" },
+      { "text": "Termination Notice Period by Agent?", "id": "termination_agent" },
+      { "text": "Crypto Funds covered (BTC, ETH, etc.)?", "id": "crypto_funds" },
+      { "text": "Multi-signature wallet provider (e.g., Gnosis Safe)?", "id": "multisig_provider" },
+      { "text": "Reporting Tool (Google Sheets/Notion/etc.)?", "id": "reporting_tool" },
+      { "text": "Expense reimbursement threshold?", "id": "expense_threshold" },
+      { "text": "Governing Law?", "id": "governing_law" },
+      { "text": "Dispute Resolution Mechanism?", "id": "dispute_resolution" },
+      { "text": "Arbitration Location?", "id": "arbitration_location" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    Disclaimer. This document is a starting point only and not legal, financial, tax, or investment advice. Tailor to your needs and consult counsel. Use is subject to Terms of Use.\n  </div>\n\n  <h1 style=\"text-align:center;\">INTERNAL CRYPTO FUNDS MANAGEMENT AGREEMENT</h1>\n  <p>This Agreement is entered into by and between {{principal_entity}}, incorporated in {{principal_jurisdiction}}, registration number {{principal_registration}}, located at {{principal_address}} (\"Principal\") and {{agent_name}}, a citizen of {{agent_nationality}}, passport/ID {{agent_passport}}, residing at {{agent_address}} (\"Agent\"). Effective Date: {{effective_date}}.</p>\n\n  <h3>Signatures of the Parties</h3>\n  <table style=\"width:100%; margin-top:20px;\">\n    <tr>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>Principal</h4>\n        <p>Name: {{principal_name}}</p>\n        <p>Title: {{principal_title}}</p>\n        <p>Entity: {{principal_entity}}</p>\n        <p>Email: {{principal_email}}</p>\n      </td>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>Agent</h4>\n        <p>Name: {{agent_name}}</p>\n        <p>Email: {{agent_email}}</p>\n        <p>Address: {{agent_address}}</p>\n      </td>\n    </tr>\n  </table>\n\n  <h3>Definitions</h3>\n  <p><strong>Crypto Funds:</strong> {{crypto_funds}}</p>\n\n  <h3>Appointment & General Mandate</h3>\n  <p>Principal appoints Agent to manage Crypto Funds on a non-discretionary basis. Instructions may be via agreed channels. All profit/loss accrues to Principal.</p>\n\n  <h3>Procedures</h3>\n  <p>Agent shall open accounts/wallets (including {{multisig_provider}} multi-signature wallets) as instructed by Principal and execute transactions accordingly.</p>\n\n  <h3>Reporting</h3>\n  <p>Agent records all transactions in {{reporting_tool}} including transaction date, asset, amount, purpose, counterparty, and supporting docs.</p>\n\n  <h3>Fees & Costs</h3>\n  <p>Agent’s fees are covered under employment/subcontract terms. Expenses exceeding {{expense_threshold}} require prior approval.</p>\n\n  <h3>Duration & Termination</h3>\n  <p>Agreement term: {{agreement_term}}. Termination by Principal: {{termination_principal}} notice. Termination by Agent: {{termination_agent}} notice.</p>\n\n  <h3>Return of Funds</h3>\n  <p>Agent shall return all Crypto Funds (including airdrops, forks, staking rewards) as instructed.</p>\n\n  <h3>Security Measures</h3>\n  <p>Agent must apply industry-standard custody & cybersecurity practices. Losses due to negligence are Agent’s liability.</p>\n\n  <h3>Tax Liability</h3>\n  <p>Each Party is responsible for its own taxes. Transaction-related taxes/fees are borne by Principal.</p>\n\n  <h3>Conflicts of Interest</h3>\n  <p>Agent must disclose conflicts immediately upon awareness.</p>\n\n  <h3>Representations</h3>\n  <p>Agent represents they are of legal capacity, solvent, skilled in crypto management. Principal represents it has authority and accepts risks.</p>\n\n  <h3>Indemnity & Liability</h3>\n  <p>Agent indemnifies Principal for misrepresentation, breach, or legal violations. Agent not liable for third-party failures unless due to gross negligence.</p>\n\n  <h3>Confidentiality</h3>\n  <p>Agent must protect Principal’s information, only disclose if legally required, and return upon request.</p>\n\n  <h3>Miscellaneous</h3>\n  <p><strong>Governing Law:</strong> {{governing_law}}</p>\n  <p><strong>Dispute Resolution:</strong> {{dispute_resolution}} (including arbitration in {{arbitration_location}})</p>\n  <p>Force majeure, severability, assignment, waiver, survival, entire agreement, and counterparts provisions apply.</p>\n</div>"
+      }
+    ]
+  }'
