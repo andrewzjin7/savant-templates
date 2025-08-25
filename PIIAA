@@ -1,0 +1,32 @@
+curl -X POST "https://api.getmediarank.com/api/v1/template-management/templates" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Proprietary Information and Invention Assignment Agreement",
+    "description": "Template for PIIAA with placeholders and structured questions.",
+    "category": "for-startups",
+    "complexity": "High",
+    "tags": ["piiaa", "proprietary information", "invention assignment", "agreement", "template"],
+    "questions": [
+      { "text": "Company Legal Name?", "id": "company_name" },
+      { "text": "Company Jurisdiction?", "id": "company_jurisdiction" },
+      { "text": "Company Representative Name?", "id": "company_rep_name" },
+      { "text": "Company Representative Title?", "id": "company_rep_title" },
+      { "text": "Company Email?", "id": "company_email" },
+      { "text": "Company Address?", "id": "company_address" },
+      { "text": "Assignor Full Name?", "id": "assignor_name" },
+      { "text": "Assignor Email?", "id": "assignor_email" },
+      { "text": "Assignor Address?", "id": "assignor_address" },
+      { "text": "Effective Date?", "id": "effective_date" },
+      { "text": "Does Assignor have any Excluded Assets (Yes/No)?", "id": "excluded_assets" },
+      { "text": "If yes, list Excluded Assets (comma-separated)", "id": "excluded_assets_list" },
+      { "text": "Governing Law?", "id": "governing_law" },
+      { "text": "Assignor Signature Date?", "id": "assignor_signature_date" },
+      { "text": "Company Signature Date?", "id": "company_signature_date" }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "page_html": "<div style=\"font-family: serif; line-height: 1.4;\">\n  <div style=\"border:1px solid #ddd; padding:10px; background:#fffbe6; font-size:12px;\">\n    <strong>IMPORTANT NOTICE (Delete This Box Before Signing)</strong><br/>\n    This document is only a starting point and not legal, financial, tax, or investment advice. Tailor to your needs and consult counsel. Use is subject to Terms of Use.\n  </div>\n\n  <h1 style=\"text-align:center;\">PROPRIETARY INFORMATION AND INVENTION ASSIGNMENT AGREEMENT</h1>\n\n  <p>This Agreement is entered into on {{effective_date}} between {{company_name}}, a company formed under {{company_jurisdiction}} (\"Company\"), and {{assignor_name}} (\"Assignor\").</p>\n\n  <h3>Definitions</h3>\n  <p>Assignor-Created Assets, Excluded Assets, Intellectual Property, Proprietary Information are defined within this Agreement.</p>\n\n  <h3>Business Relationship</h3>\n  <p>Scope applies to Assignor’s relationship with Company. Assignor’s duties are to devote best efforts. Relationship is at-will. Non-competition applies during and 12 months after termination.</p>\n\n  <h3>Intellectual Property and Proprietary Information</h3>\n  <p>Assignor agrees to assign all Assignor-Created Assets to Company. Works created are works for hire. Company is attorney-in-fact to perfect ownership. Excluded Assets: {{excluded_assets}} ({{excluded_assets_list}}). If used, license granted to Company.</p>\n\n  <h3>Confidentiality</h3>\n  <p>Assignor must keep Proprietary Information confidential, return all upon termination, and has no expectation of privacy on Company systems.</p>\n\n  <h3>Assignor Representations</h3>\n  <p>Assignor confirms no conflicts, has sought counsel if desired, and will seek approval before publications. Assignor grants Company rights to use image/likeness.</p>\n\n  <h3>Miscellaneous</h3>\n  <p>Binding on successors/assigns. Modifications must be in writing. Notices use listed contact info. Agreement governed by {{governing_law}}. Company may seek equitable relief. Severability and survival provisions apply.</p>\n\n  <h3>Signatures</h3>\n  <table style=\"width:100%; margin-top:20px;\">\n    <tr>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>COMPANY</h4>\n        <p>Entity: {{company_name}}</p>\n        <p>Name: {{company_rep_name}}</p>\n        <p>Title: {{company_rep_title}}</p>\n        <p>Email: {{company_email}}</p>\n        <p>Address: {{company_address}}</p>\n        <p>Signature Date: {{company_signature_date}}</p>\n      </td>\n      <td style=\"vertical-align:top; width:50%;\">\n        <h4>ASSIGNOR</h4>\n        <p>Name: {{assignor_name}}</p>\n        <p>Email: {{assignor_email}}</p>\n        <p>Address: {{assignor_address}}</p>\n        <p>Signature Date: {{assignor_signature_date}}</p>\n      </td>\n    </tr>\n  </table>\n</div>"
+      }
+    ]
+  }'
